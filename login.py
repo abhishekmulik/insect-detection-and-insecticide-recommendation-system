@@ -64,10 +64,7 @@ def login():
 
          if result:
             msg = ""
-            # self.logf.pack_forget()
-            # self.head['text'] = self.username.get() + '\n Loged In'
-            # msg = self.head['text']
-            #            self.head['pady'] = 150
+           
             print(msg)
             ms.showinfo("messege", "Login sucessfully")
             # ===========================================
