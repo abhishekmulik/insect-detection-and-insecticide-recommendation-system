@@ -43,22 +43,9 @@ label_l1.place(x=0, y=10)
 #T1.tag_configure("center", justify='center')
 #T1.tag_add("center", 1.0, "end")
 
-################################$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-#def clear_img():
-#    img11 = tk.Label(root, background='bisque2')
-#    img11.place(x=0, y=0)
-
-
-#################################################################$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 
 ################################$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-# def cap_video():
-    
-#     video1.upload()
-#     #from subprocess import call
-#     #call(['python','video_second.py'])
 
 def log():
     from subprocess import call
