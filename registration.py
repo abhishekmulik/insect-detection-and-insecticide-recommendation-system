@@ -170,10 +170,7 @@ l3 = tk.Label(window, text="Address :", width=12, font=("Times new roman", 15, "
 l3.place(x=130, y=200)
 t2 = tk.Entry(window, textvar=address, width=20, font=('', 15))
 t2.place(x=330, y=200)
-# that is for label 3(address)
 
-
-# that is for label 4(blood group)
 
 l5 = tk.Label(window, text="E-mail :", width=12, font=("Times new roman", 15, "bold"), bg="snow")
 l5.place(x=130, y=250)
