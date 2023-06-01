@@ -40,17 +40,7 @@ lbl = tk.Label(root, text="Insect Detection", font=('times', 35,' bold '), width
 lbl.place(x=0, y=10)
 
 
-#frame_display = tk.LabelFrame(root, text=" --Display-- ", width=900, height=250, bd=5, font=('times', 14, ' bold '),bg="lightblue4")
-#frame_display.grid(row=0, column=0, sticky='nw')
-#frame_display.place(x=300, y=100)
 
-#frame_display1 = tk.LabelFrame(root, text=" --Result-- ", width=900, height=200, bd=5, font=('times', 14, ' bold '),bg="lightblue4")
-#frame_display1.grid(row=0, column=0, sticky='nw')
-#frame_display1.place(x=300, y=430)
-
-#frame_display2 = tk.LabelFrame(root, text=" --Calaries-- ", width=900, height=50, bd=5, font=('times', 14, ' bold '),bg="lightblue4")
-#frame_display2.grid(row=0, column=0, sticky='nw')
-#frame_display2.place(x=300, y=380)
 
 frame_alpr = tk.LabelFrame(root, text=" --Process-- ", fg='white',width=220, height=350, bd=5, font=('times', 14, ' bold '),bg="#2F4F4F")
 frame_alpr.grid(row=0, column=0, sticky='nw')
@@ -159,10 +149,7 @@ def test_model_proc(fn):
         A=Cd
         return A
 
-# def clear_img():
-    
-#     img11 = tk.Label(frame_display, background='lightblue4',width=160,height=120)
-#     img11.place(x=0, y=0)
+
 
 def update_label(str_T):
     #clear_img()
@@ -231,21 +218,16 @@ def openimage():
 
 
 #
-#        gs = cv2.cvtColor(cv2.imread(imgpath, 1), cv2.COLOR_RGB2GRAY)
-#
-#        gs = cv2.resize(gs, (x1, y1))
-#
-#        retval, threshold = cv2.threshold(gs, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+#      
 
     im = Image.fromarray(img)
     imgtk = ImageTk.PhotoImage(im)
     img = tk.Label(root,text='Original',font=('times new roman', 20 ,'bold'), image=imgtk,compound='bottom', height=250, width=250)
     
-    #result_label1 = tk.Label(root, image=imgtk, width=250,height=250)
-    #result_label1.place(x=300, y=100)
+
     img.image = imgtk
     img.place(x=300, y=100)
-   # out_label.config(text=imgpath)
+
 
 def convert_grey():
     global fn    
@@ -268,13 +250,11 @@ def convert_grey():
     im = Image.fromarray(gs)
     imgtk = ImageTk.PhotoImage(image=im)
     
-    #result_label1 = tk.Label(root, image=imgtk, width=250, font=("bold", 25), bg='bisque2', fg='black',height=250)
-    #result_label1.place(x=300, y=400)
+   
     img2 = tk.Label(root,text='Gray',font=('times new roman', 20 ,'bold'), image=imgtk,compound='bottom', height=250, width=250,bg='white')
     img2.image = imgtk
     img2.place(x=580, y=100)
-    #label_l1 = tk.Label(root, text='Gray' ,compound='bottom', width=4, height=1)
-    #label_l1.place(x=690, y=110)
+   
 
     im = Image.fromarray(threshold)
     imgtk = ImageTk.PhotoImage(image=im)
@@ -282,8 +262,7 @@ def convert_grey():
     img3 = tk.Label(root,text='Binary',font=('times new roman', 20 ,'bold'), image=imgtk,compound='bottom', height=250, width=250)
     img3.image = imgtk
     img3.place(x=880, y=100)
-    #result_label1 = tk.Label(root, image=imgtk, width=250,height=250, font=("bold", 25), bg='bisque2', fg='black')
-    #result_label1.place(x=300, y=400)
+   
 
 
 #################################################################################################################
