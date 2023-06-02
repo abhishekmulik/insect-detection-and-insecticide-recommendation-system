@@ -31,6 +31,16 @@ label_l1 = tk.Label(root, text="Insect Detection And Insecticide Recommendation 
                     background="#BC8F8F", fg="white", width=60, height=1)
 label_l1.place(x=0, y=10)
 
+<<<<<<< HEAD
+=======
+#T1.tag_configure("center", justify='center')
+#T1.tag_add("center", 1.0, "end")
+
+
+################################$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+>>>>>>> f548a5cc80a1c2ca711f8b2dd3d35de49ef07cb9
 def log():
     from subprocess import call
     call(["python","login.py"])

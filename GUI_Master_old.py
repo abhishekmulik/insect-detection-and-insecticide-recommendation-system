@@ -141,6 +141,10 @@ def test_model_proc(fn):
         A=Cd
         return A
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> f548a5cc80a1c2ca711f8b2dd3d35de49ef07cb9
 
 def update_label(str_T):
     #clear_img()
@@ -191,13 +195,26 @@ def openimage():
     y1 = int(img.shape[1])
 
 
+<<<<<<< HEAD
+=======
+#
+#      
+
+>>>>>>> f548a5cc80a1c2ca711f8b2dd3d35de49ef07cb9
     im = Image.fromarray(img)
     imgtk = ImageTk.PhotoImage(im)
     img = tk.Label(root,text='Original',font=('times new roman', 20 ,'bold'), image=imgtk,compound='bottom', height=250, width=250)
     
+<<<<<<< HEAD
     img.image = imgtk
     img.place(x=300, y=100)
    
+=======
+
+    img.image = imgtk
+    img.place(x=300, y=100)
+
+>>>>>>> f548a5cc80a1c2ca711f8b2dd3d35de49ef07cb9
 
 def convert_grey():
     global fn    
@@ -220,10 +237,18 @@ def convert_grey():
     im = Image.fromarray(gs)
     imgtk = ImageTk.PhotoImage(image=im)
     
+<<<<<<< HEAD
     img2 = tk.Label(root,text='Gray',font=('times new roman', 20 ,'bold'), image=imgtk,compound='bottom', height=250, width=250,bg='white')
     img2.image = imgtk
     img2.place(x=580, y=100)
     
+=======
+   
+    img2 = tk.Label(root,text='Gray',font=('times new roman', 20 ,'bold'), image=imgtk,compound='bottom', height=250, width=250,bg='white')
+    img2.image = imgtk
+    img2.place(x=580, y=100)
+   
+>>>>>>> f548a5cc80a1c2ca711f8b2dd3d35de49ef07cb9
 
     im = Image.fromarray(threshold)
     imgtk = ImageTk.PhotoImage(image=im)
@@ -232,6 +257,10 @@ def convert_grey():
     img3.image = imgtk
     img3.place(x=880, y=100)
    
+<<<<<<< HEAD
+=======
+
+>>>>>>> f548a5cc80a1c2ca711f8b2dd3d35de49ef07cb9
 
 #################################################################################################################
 def window():
