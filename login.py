@@ -16,31 +16,9 @@ w, h = root.winfo_screenwidth(), root.winfo_screenheight()
 root.geometry("700x650+200+50")
 root.title("Login Form")
 
-
-
-
 username = tk.StringVar()
 password = tk.StringVar()
         
-
-# ++++++++++++++++++++++++++++++++++++++++++++
-#####For background Image
-# image2 = Image.open('17.jpg')
-# image2 = image2.resize((w,h), Image.ANTIALIAS)
-
-# background_image = ImageTk.PhotoImage(image2)
-
-# background_label = tk.Label(root, image=background_image)
-
-# background_label.image = background_image
-
-# background_label.place(x=0, y=0)  # , relwidth=1, relheight=1)
-
-
-
-
-
-
 def registration():
     from subprocess import call
     call(["python","registration.py"])
@@ -64,10 +42,6 @@ def login():
 
          if result:
             msg = ""
-            # self.logf.pack_forget()
-            # self.head['text'] = self.username.get() + '\n Loged In'
-            # msg = self.head['text']
-            #            self.head['pady'] = 150
             print(msg)
             ms.showinfo("messege", "Login sucessfully")
             # ===========================================

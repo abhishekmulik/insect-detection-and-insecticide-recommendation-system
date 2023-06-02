@@ -85,11 +85,7 @@ def insert():
     find_user = ('SELECT * FROM registration WHERE username = ?')
     c.execute(find_user, [(username.get())])
 
-    # else:
-    #   ms.showinfo('Success!', 'Account Created Successfully !')
-
-    # to check mail
-    #regex = '^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$'
+ 
     regex='^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
     if (re.search(regex, email)):
         a = True
@@ -133,14 +129,6 @@ def insert():
             call(["python", "login.py"])
             
 
-#####################################################################################################################################################
-
-#from subprocess import call
-#call(["python", "lecture_login.py"])
-
-
-# assign and define variable
-# def login():
 
 #####For background Image
 image2 = Image.open('13.jpg')
@@ -170,10 +158,7 @@ l3 = tk.Label(window, text="Address :", width=12, font=("Times new roman", 15, "
 l3.place(x=130, y=200)
 t2 = tk.Entry(window, textvar=address, width=20, font=('', 15))
 t2.place(x=330, y=200)
-# that is for label 3(address)
 
-
-# that is for label 4(blood group)
 
 l5 = tk.Label(window, text="E-mail :", width=12, font=("Times new roman", 15, "bold"), bg="snow")
 l5.place(x=130, y=250)
@@ -217,6 +202,5 @@ t10.place(x=330, y=550)
 
 btn = tk.Button(window, text="Register", bg="#000000",font=("",20),fg="white", width=9, height=1, command=insert)
 btn.place(x=260, y=620)
-# tologin=tk.Button(window , text="Go To Login", bg ="dark green", fg = "white", width=15, height=2, command=login)
-# tologin.place(x=330, y=600)
+
 window.mainloop()

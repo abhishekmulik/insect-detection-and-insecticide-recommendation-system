@@ -69,14 +69,12 @@ def Train():
         print(e7)
         e8=Phosphorous.get() 
         print(e8)
-        e9=insect.get()
-        print(e9)
        
         #########################################################################################
         
         from joblib import dump , load
-        a1=load('./Pesticide_SVM_MODEL.joblib')
-        v= a1.predict([[e1,e2,e3, e4, e5, e6, e7, e8,e9]])
+        a1=load('./Pesticide_DT_MODEL.joblib')
+        v= a1.predict([[e1,e2,e3, e4, e5, e6, e7, e8]])
        
         if v[0]==0:
             print("0")

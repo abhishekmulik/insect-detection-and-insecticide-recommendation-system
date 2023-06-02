@@ -8,7 +8,7 @@ def main():
     from keras.layers import Dense, Dropout
     from tensorflow.keras import optimizers
     
-    basepath="C:/python code/insect detection"
+    basepath="C:/Users/Coditas/Desktop/BE/Prac/Projects/insect-detection-and-insecticide-recommendation-system/"
     
     # Initialing the CNN
     classifier = Sequential()
@@ -98,7 +98,7 @@ def main():
     plt.title('model accuracy')
     plt.ylabel('accuracy')
     plt.xlabel('epoch')
-    plt.legend(['train', 'test'], loc='upper left')
+    plt.legend(['train', 'val'], loc='upper left')
     plt.savefig(basepath + "/accuracy.png",bbox_inches='tight')
 
     plt.show()

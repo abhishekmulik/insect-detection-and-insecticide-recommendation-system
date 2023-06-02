@@ -5,7 +5,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
-#import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import ttk
 from sklearn.decomposition import PCA
@@ -113,7 +112,7 @@ def Model_Training():
     data['Nitrogen'] = le.fit_transform(data['Nitrogen'])
     data['Potassium'] = le.fit_transform(data['Potassium'])
     data['Phosphorous'] = le.fit_transform(data['Phosphorous'])
-    data['insect'] = le.fit_transform(data['insect'])
+    
     
     
 
@@ -129,11 +128,11 @@ def Model_Training():
     from sklearn.model_selection import train_test_split
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20,random_state=10)
 
-    from sklearn.svm import SVC
-    svcclassifier = SVC(kernel='linear',random_state=10)
-    svcclassifier.fit(x_train, y_train)
+    from sklearn.tree import DecisionTreeClassifier
+    clf = DecisionTreeClassifier()
+    clf.fit(x_train, y_train)
 
-    y_pred = svcclassifier.predict(x_test)
+    y_pred = clf.predict(x_test)
     print(y_pred)
 
     
@@ -150,11 +149,42 @@ def Model_Training():
     label4 = tk.Label(root,text =str(repo),width=45,height=10,bg='khaki',fg='black',font=("Tempus Sanc ITC",14))
     label4.place(x=300,y=200)
     
-    label5 = tk.Label(root,text ="Accracy : "+str(ACC)+"%\nModel saved as Pesticide_SVM_MODEL.joblib",width=45,height=3,bg='khaki',fg='black',font=("Tempus Sanc ITC",14))
+    label5 = tk.Label(root,text ="Accracy : "+str(ACC)+"%\nModel saved as Pesticide_DT_MODEL.joblib",width=45,height=3,bg='khaki',fg='black',font=("Tempus Sanc ITC",14))
     label5.place(x=300,y=420)
     from joblib import dump
-    dump (svcclassifier,"Pesticide_SVM_MODEL.joblib")
-    print("Model saved as Pesticide_SVM_MODEL.joblib")
+    dump (clf,"Pesticide_DT_MODEL.joblib")
+    print("Model saved as Pesticide_DT_MODEL.joblib")
+
+
+    # from sklearn.model_selection import train_test_split
+    # x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.20,random_state=10)
+
+    # from sklearn.svm import SVC
+    # svcclassifier = SVC(kernel='linear',random_state=10)
+    # svcclassifier.fit(x_train, y_train)
+
+    # y_pred = svcclassifier.predict(x_test)
+    # print(y_pred)
+
+    
+    # print("=" * 40)
+    # print("==========")
+    # print("Classification Report : ",(classification_report(y_test, y_pred)))
+    # print("Accuracy : ",accuracy_score(y_test,y_pred)*100)
+    # accuracy = accuracy_score(y_test, y_pred)
+    # print("Accuracy: %.2f%%" % (accuracy * 100.0))
+    # ACC = (accuracy_score(y_test, y_pred) * 100)
+    # repo = (classification_report(y_test, y_pred))
+    
+    
+    # label4 = tk.Label(root,text =str(repo),width=45,height=10,bg='khaki',fg='black',font=("Tempus Sanc ITC",14))
+    # label4.place(x=300,y=200)
+    
+    # label5 = tk.Label(root,text ="Accracy : "+str(ACC)+"%\nModel saved as Pesticide_SVM_MODEL.joblib",width=45,height=3,bg='khaki',fg='black',font=("Tempus Sanc ITC",14))
+    # label5.place(x=300,y=420)
+    # from joblib import dump
+    # dump (svcclassifier,"Pesticide_SVM_MODEL.joblib")
+    # print("Model saved as Pesticide_SVM_MODEL.joblib")
 
 # def DT():
 #     data = pd.read_csv("Pesticide.csv")
@@ -313,15 +343,6 @@ button3 = tk.Button(root, foreground="white", background="black", font=("Tempus 
                     text="SVM Training", command=Model_Training, width=20, height=2)
 button3.place(x=5, y=220)
 
-
-# button3 = tk.Button(root, foreground="white", background="black", font=("Tempus Sans ITC", 14, "bold"),
-#                     text="DT Training", command=DT, width=20, height=2)
-# button3.place(x=5, y=320)
-
-
-# button3 = tk.Button(root, foreground="white", background="black", font=("Tempus Sans ITC", 14, "bold"),
-#                     text="NB Training", command=NB, width=20, height=2)
-# button3.place(x=5, y=420)
 
 button4 = tk.Button(root, foreground="white", background="black", font=("Tempus Sans ITC", 14, "bold"),
                     text="Pesticide Suggestion", command=call_file, width=20, height=2)
